@@ -26,13 +26,13 @@
           <Group type="102" attributes="0">
               <EmptySpace pref="103" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jPasswordField1" max="32767" attributes="0"/>
-                  <Component id="jTextField1" max="32767" attributes="0"/>
+                  <Component id="txtPassword" max="32767" attributes="0"/>
+                  <Component id="txtUsername" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="sVGImage1" min="-2" pref="127" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jButton1" pref="277" max="32767" attributes="0"/>
+                  <Component id="btnLogin" pref="277" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="104" max="32767" attributes="0"/>
           </Group>
@@ -44,11 +44,11 @@
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="sVGImage1" min="-2" pref="123" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+              <Component id="txtUsername" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jPasswordField1" min="-2" max="-2" attributes="0"/>
+              <Component id="txtPassword" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="48" max="-2" attributes="0"/>
+              <Component id="btnLogin" min="-2" pref="48" max="-2" attributes="0"/>
               <EmptySpace pref="65" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -61,11 +61,17 @@
         <Property name="name" type="java.lang.String" value="" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+    <Component class="javax.swing.JPasswordField" name="txtPassword">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPasswordActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="txtUsername">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUsernameActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnLogin">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="33" red="0" type="rgb"/>
@@ -78,6 +84,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="&#xec0;&#xe82;&#xebb;&#xec9;&#xeb2;&#xec3;&#xe8a;&#xec9;&#xe87;&#xeb2;&#xe99;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoginActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
