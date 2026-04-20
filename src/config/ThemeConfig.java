@@ -15,8 +15,8 @@ public class ThemeConfig {
 //         FlatDarkLaf.setup();
 
         // ====== Default Font ======
-        UIManager.put("defaultFont", new Font("Lao_Somvang", Font.PLAIN, 14));
-        UIManager.put("TitlePane.font", new Font("Lao_Somvang", Font.PLAIN, 16));
+        UIManager.put("defaultFont", new Font("Phetsarath OT", Font.PLAIN, 14));
+        UIManager.put("TitlePane.font", new Font("Phetsarath OT", Font.PLAIN, 16));
 
         // ====== OptionPane Buttons ======
         UIManager.put("OptionPane.okButtonText", "ຕົກລົງ");
@@ -37,7 +37,7 @@ public class ThemeConfig {
         UIManager.put("ScrollBar.thumbInsets", new Insets(2, 2, 2, 2));
 
         // ====== JTable Header Customization ======
-        UIManager.put("TableHeader.font", new Font("Lao_Somvang", Font.PLAIN, 15));
+        UIManager.put("TableHeader.font", new Font("Phetsarath OT", Font.PLAIN, 15));
         UIManager.put("TableHeader.background", new Color(108, 117, 125));
         UIManager.put("TableHeader.foreground", new Color(243, 243, 243));
         //UIManager.put("TableHeader.height", 30); // optional: change row height
