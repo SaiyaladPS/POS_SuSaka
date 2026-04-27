@@ -4,6 +4,7 @@ import com.formdev.flatlaf.FlatClientProperties;
 import com.formdev.flatlaf.extras.FlatSVGIcon;
 import config.ThemeConfig;
 import includeClass.PasswordHashing;
+import org.mindrot.jbcrypt.BCrypt;
 import java.awt.Color;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
@@ -135,30 +136,35 @@ public class Login extends javax.swing.JFrame {
         }
         
         try {
-            // ເຊື່ອມຕໍ່ຖານຂໍ້ມູນ
             conn = Mysql_connect.connectDb();
-            
+
             String sql = """
-                         SELECT
-                             emp_id,
-                             CONCAT(emp_name, ' ', emp_lname) AS NAME,
-                         STATUS
-                         FROM
-                             employee
-                         WHERE
-                             username = ? AND PASSWORD = ?
-                         """;
-            
+                SELECT emp_id,
+                       CONCAT(emp_name, ' ', emp_lname) AS NAME,
+                       status,
+                       password
+                FROM employee
+                WHERE username = ?
+            """;
+
             pst = conn.prepareStatement(sql);
             pst.setString(1, txtUsername.getText());
-            pst.setString(2, PasswordHashing.doHashing(txtPassword.getText()));
+
             rs = pst.executeQuery();
+
             if (rs.next()) {
-                Main m = new Main();
-                m.setVisible(true);
-                dispose(); //ປິດໜ້າ Login
+                String hashedPasswordFromDB = rs.getString("password");
+
+                // 🔥 เช็ค password ด้วย bcrypt
+                if (BCrypt.checkpw(txtPassword.getText(), hashedPasswordFromDB)) {
+                    Main m = new Main();
+                    m.setVisible(true);
+                    dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "ລະຫັດຜ່ານບໍ່ຖືກ", "ຜິດພາດ", JOptionPane.ERROR_MESSAGE);
+                }
             } else {
-                JOptionPane.showMessageDialog(this, "ບັນຊີເຂົ້າໃຊ້ ແລະ ລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ", "ຜິດພາດ", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "ບໍ່ພົບຜູ້ໃຊ້", "ຜິດພາດ", JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e);
