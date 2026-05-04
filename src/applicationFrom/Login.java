@@ -62,7 +62,6 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        sVGImage1.setText("sVGImage1");
         sVGImage1.setName(""); // NOI18N
 
         txtPassword.addActionListener(this::txtPasswordActionPerformed);
@@ -136,7 +135,7 @@ public class Login extends javax.swing.JFrame {
         }
         
         try {
-            conn = Mysql_connect.connectDb();
+           conn = Mysql_connect.connectDb();
 
             String sql = """
                 SELECT emp_id,
@@ -155,11 +154,18 @@ public class Login extends javax.swing.JFrame {
             if (rs.next()) {
                 String hashedPasswordFromDB = rs.getString("password");
 
-                // 🔥 เช็ค password ด้วย bcrypt
-                if (BCrypt.checkpw(txtPassword.getText(), hashedPasswordFromDB)) {
-                    Main m = new Main();
+                String passwordInput = new String(txtPassword.getPassword());
+
+                if (BCrypt.checkpw(passwordInput, hashedPasswordFromDB)) {
+
+                    String id = rs.getString("emp_id");
+                    String name = rs.getString("NAME");
+                    String status = rs.getString("status");
+
+                    Main m = new Main(id, name, status);
                     m.setVisible(true);
                     dispose();
+
                 } else {
                     JOptionPane.showMessageDialog(this, "ລະຫັດຜ່ານບໍ່ຖືກ", "ຜິດພາດ", JOptionPane.ERROR_MESSAGE);
                 }
