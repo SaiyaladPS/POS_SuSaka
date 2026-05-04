@@ -15,7 +15,7 @@ public class Mysql_connect {
     public static Connection connectDb() {
         String host = "jdbc:mysql://localhost:3306/pos_workshop?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8";
         String username = "root";
-        String password = "";
+        String password = "p@ssw0rd";
         Connection conn = null;
         
         try {
