@@ -28,18 +28,21 @@
     </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar2">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu5">
+        <Menu class="javax.swing.JMenu" name="jMenuHome">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/home_Page.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#xedc;&#xec9;&#xeb2;&#xeab;&#xebc;&#xeb1;&#xe81;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lao_SomVang" size="14" style="0"/>
+              <Font name="Phetsarath OT" size="14" style="0"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenuHomeMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu7">
           <Properties>
@@ -48,24 +51,27 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&#xe88;&#xeb1;&#xe94;&#xe81;&#xeb2;&#xe99;&#xe82;&#xecd;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lao_SomVang" size="14" style="0"/>
+              <Font name="Phetsarath OT" size="14" style="0"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuData">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemBrand">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xe88;&#xeb1;&#xe94;&#xe81;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xe8d;&#xeb5;&#xec8;&#xeab;&#xecd;&#xec9;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemBrandActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xe88;&#xeb1;&#xe94;&#xe81;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xe9b;&#xeb0;&#xec0;&#xe9e;&#xe94;"/>
               </Properties>
@@ -73,7 +79,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xe88;&#xeb1;&#xe94;&#xe81;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xeaa;&#xeb4;&#xe99;&#xe84;&#xec9;&#xeb2;"/>
               </Properties>
@@ -81,7 +87,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xe88;&#xeb1;&#xe94;&#xe81;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xe9e;&#xeb0;&#xe99;&#xeb1;&#xe81;&#xe87;&#xeb2;&#xe99;"/>
               </Properties>
@@ -89,7 +95,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xe88;&#xeb1;&#xe94;&#xe81;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xead;&#xeb1;&#xe94;&#xe95;&#xeb2;&#xec1;&#xea5;&#xe81;&#xe9b;&#xec8;&#xebd;&#xe99;"/>
               </Properties>
@@ -97,7 +103,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xe88;&#xeb1;&#xe94;&#xe81;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xe9c;&#xec9;&#xeb9;&#xeaa;&#xeb0;&#xedc;&#xead;&#xe87;"/>
               </Properties>
@@ -111,7 +117,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&#xeaa;&#xeb1;&#xec8;&#xe87;&#xe8a;&#xeb7;&#xec9;-&#xe99;&#xeb3;&#xec0;&#xe82;&#xebb;&#xec9;&#xeb2;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lao_SomVang" size="14" style="0"/>
+              <Font name="Phetsarath OT" size="14" style="0"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -120,7 +126,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuOrder_Import">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xe88;&#xeb1;&#xe94;&#xe81;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xeaa;&#xeb1;&#xec8;&#xe87;&#xe8a;&#xeb7;&#xec9;&#xeaa;&#xeb4;&#xe99;&#xe84;&#xec9;&#xeb2;"/>
               </Properties>
@@ -131,7 +137,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem16">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xe88;&#xeb1;&#xe94;&#xe81;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xe99;&#xeb3;&#xec0;&#xe82;&#xebb;&#xec9;&#xeb2;&#xeaa;&#xeb4;&#xe99;&#xe84;&#xec9;&#xeb2;"/>
               </Properties>
@@ -145,7 +151,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&#xea5;&#xeb9;&#xe81;&#xe84;&#xec9;&#xeb2;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lao_SomVang" size="14" style="0"/>
+              <Font name="Phetsarath OT" size="14" style="0"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -158,7 +164,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&#xe82;&#xeb2;&#xe8d;&#xeaa;&#xeb4;&#xe99;&#xe84;&#xec9;&#xeb2;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lao_SomVang" size="14" style="0"/>
+              <Font name="Phetsarath OT" size="14" style="0"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -171,7 +177,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&#xe84;&#xebb;&#xec9;&#xe99;&#xeab;&#xeb2;&#xeaa;&#xeb4;&#xe99;&#xe84;&#xec9;&#xeb2;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lao_SomVang" size="14" style="0"/>
+              <Font name="Phetsarath OT" size="14" style="0"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -184,7 +190,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&#xea5;&#xeb2;&#xe8d;&#xe87;&#xeb2;&#xe99;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lao_SomVang" size="14" style="0"/>
+              <Font name="Phetsarath OT" size="14" style="0"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -193,7 +199,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem7">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xea5;&#xeb2;&#xe8d;&#xe87;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xe81;&#xeb2;&#xe99;&#xe82;&#xeb2;&#xe8d;"/>
               </Properties>
@@ -201,7 +207,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xea5;&#xeb2;&#xe8d;&#xe87;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xeaa;&#xeb4;&#xe99;&#xe84;&#xec9;&#xeb2;&#xec3;&#xe99;&#xeae;&#xec9;&#xeb2;&#xe99;"/>
               </Properties>
@@ -209,7 +215,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xea5;&#xeb2;&#xe8d;&#xe87;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xeaa;&#xeb4;&#xe99;&#xe84;&#xec9;&#xeb2;&#xec3;&#xe81;&#xec9;&#xedd;&#xebb;&#xe94;"/>
               </Properties>
@@ -217,7 +223,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem10">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xec3;&#xe9a;&#xe9a;&#xeb4;&#xe99;"/>
               </Properties>
@@ -225,7 +231,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem11">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xea5;&#xeb2;&#xe8d;&#xe87;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xeaa;&#xeb1;&#xec8;&#xe87;&#xe8a;&#xeb7;&#xec9;&#xeaa;&#xeb4;&#xe99;&#xe84;&#xec9;&#xeb2;"/>
               </Properties>
@@ -233,7 +239,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem12">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xea5;&#xeb2;&#xe8d;&#xe87;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xe99;&#xeb3;&#xec0;&#xe82;&#xebb;&#xec9;&#xeb2;&#xeaa;&#xeb4;&#xe99;&#xe84;&#xec9;&#xeb2;"/>
               </Properties>
@@ -241,7 +247,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem13">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xea5;&#xeb2;&#xe8d;&#xe87;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xea5;&#xeb9;&#xe81;&#xe84;&#xec9;&#xeb2;"/>
               </Properties>
@@ -249,7 +255,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem14">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#xea5;&#xeb2;&#xe8d;&#xe87;&#xeb2;&#xe99;&#xe82;&#xecd;&#xec9;&#xea1;&#xeb9;&#xe99;&#xe9e;&#xeb0;&#xe99;&#xeb1;&#xe81;&#xe87;&#xeb2;&#xe99;"/>
               </Properties>
@@ -263,7 +269,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&#xec2;&#xe9b;&#xea3;&#xec4;&#xe9f;&#xea5;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lao_SomVang" size="14" style="0"/>
+              <Font name="Phetsarath OT" size="14" style="0"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -276,7 +282,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&#xeaa;&#xeb5;&#xe9e;&#xeb7;&#xec9;&#xe99;&#xeab;&#xea5;&#xeb1;&#xe87;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lao_SomVang" size="14" style="0"/>
+              <Font name="Phetsarath OT" size="14" style="0"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -285,7 +291,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemLight">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="FlatLaf Light"/>
               </Properties>
@@ -296,7 +302,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemDark">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="FlatLaf Dark"/>
               </Properties>
@@ -307,7 +313,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemMacDark">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Lao_SomVang" size="14" style="0"/>
+                  <Font name="Phetsarath OT" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="FlatLaf MacOSDatk"/>
               </Properties>
@@ -324,7 +330,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&#xead;&#xead;&#xe81;&#xe88;&#xeb2;&#xe81;&#xea5;&#xeb0;&#xe9a;&#xebb;&#xe9a;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lao_SomVang" size="14" style="0"/>
+              <Font name="Phetsarath OT" size="14" style="0"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -359,13 +365,46 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="806" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanelMain" max="32767" attributes="0"/>
+                  <Component id="txtStatusBar" pref="856" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="415" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="jPanelMain" pref="337" max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="txtStatusBar" min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanelMain">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="ff" type="rgb"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+    </Container>
+    <Component class="javax.swing.JLabel" name="txtStatusBar">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Phetsarath OT" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>
