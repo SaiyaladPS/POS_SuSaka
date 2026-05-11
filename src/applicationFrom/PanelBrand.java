@@ -1,20 +1,62 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package applicationFrom;
 
-/**
- *
- * @author mona
- */
+import com.formdev.flatlaf.FlatClientProperties;
+import com.formdev.flatlaf.extras.FlatSVGIcon;
+import includeClass.TableColumAigneer;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import mysql_connect.Mysql_connect;
+
 public class PanelBrand extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelBrand
      */
+    Connection conn = null;         //ເກັບການເຊື່ອມຕໍ່ຖານຂໍ້ມູນ
+    PreparedStatement pst = null;   //ກຽມຄໍາສັ່ງ sql
+    ResultSet rs = null;            //ເກັບຜົນໄດ້ຮັບຈາກການປະມວນຜົນຄໍາສັ່ງ sql
+    
     public PanelBrand() {
         initComponents();
+        
+        
+        txtUnitId.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "ປ້ອນລະຫັດຍີ້ຫຍໍ້");
+        txtUnitName.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "ປ້ອນຊື່ຍີ້ຫຍໍ້");
+        
+        txtSearch.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "ຄົ້ນຫາຍີ້ຫຍໍ້");
+        txtSearch.putClientProperty(FlatClientProperties.TEXT_FIELD_TRAILING_ICON, new FlatSVGIcon("images_svg/search_text.svg"));
+        
+        TableColumAigneer.alignCenter(jTable1, 0,1,2);
+        
+        conn = Mysql_connect.connectDb();
+        tableUpdate();
+     }
+    
+    private void tableUpdate() {
+        try {
+            String sql = "SELECT * FROM brand ORDER BY brand_id DESC";
+            
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            DefaultTableModel d =(DefaultTableModel)jTable1.getModel();
+            
+            d.setRowCount(0);
+            int number = 0;
+            while(rs.next()) {
+                d.addRow(new Object[]{
+                ++number,
+                    rs.getString("brand_id"),
+                    rs.getString("brand_name")
+                });
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
     }
 
     /**
@@ -28,40 +70,157 @@ public class PanelBrand extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtUnitId = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        txtUnitName = new javax.swing.JTextField();
+        txtSearch = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
+        setFont(new java.awt.Font("Phetsarath OT", 0, 12)); // NOI18N
+
+        jTable1.setFont(new java.awt.Font("Phetsarath OT", 0, 13)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ລະດັບ", "ລະຫັດ", "ຊື່ຍີ້ຫຍໍ້"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ຈັດການຂໍ້ມູນຍີ່ຫໍ້", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Phetsarath OT", 0, 13))); // NOI18N
+        jPanel1.setFont(new java.awt.Font("Phetsarath OT", 0, 18)); // NOI18N
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Phetsarath OT", 0, 13)); // NOI18N
+        jLabel1.setText("ລະຫັດ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 31, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Phetsarath OT", 0, 13)); // NOI18N
+        jLabel2.setText("ຊື່ຍີ້ຫຍໍ້");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+
+        txtUnitId.setFont(new java.awt.Font("Phetsarath OT", 0, 13)); // NOI18N
+        txtUnitId.setEnabled(false);
+        txtUnitId.setName("txtUnitId"); // NOI18N
+        txtUnitId.addActionListener(this::txtUnitIdActionPerformed);
+        jPanel1.add(txtUnitId, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 350, -1));
+
+        jButton1.setBackground(new java.awt.Color(0, 255, 255));
+        jButton1.setFont(new java.awt.Font("Phetsarath OT", 0, 13)); // NOI18N
+        jButton1.setText("ຍົກເລີກ");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 80, 30));
+
+        jButton2.setBackground(new java.awt.Color(102, 102, 255));
+        jButton2.setFont(new java.awt.Font("Phetsarath OT", 0, 13)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("ເພິ່ມ");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 80, 30));
+
+        jButton3.setBackground(new java.awt.Color(255, 153, 0));
+        jButton3.setFont(new java.awt.Font("Phetsarath OT", 0, 13)); // NOI18N
+        jButton3.setText("ແກ້ໄຂ");
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 80, 30));
+
+        jButton4.setBackground(new java.awt.Color(255, 51, 51));
+        jButton4.setFont(new java.awt.Font("Phetsarath OT", 0, 13)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("ລົບ");
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 80, 30));
+
+        txtUnitName.setFont(new java.awt.Font("Phetsarath OT", 0, 13)); // NOI18N
+        txtUnitName.setName("txtUintName"); // NOI18N
+        jPanel1.add(txtUnitName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 350, -1));
+
+        txtSearch.setFont(new java.awt.Font("Phetsarath OT", 0, 13)); // NOI18N
+        txtSearch.setName("txtUnitId"); // NOI18N
+        txtSearch.addActionListener(this::txtSearchActionPerformed);
+
+        jLabel3.setFont(new java.awt.Font("Phetsarath OT", 0, 13)); // NOI18N
+        jLabel3.setText("ຄົ້ນຫາ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(274, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(8, 8, 8)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 92, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel3))
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(125, 125, 125))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE))
+                .addGap(32, 32, 32))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtUnitIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUnitIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUnitIdActionPerformed
+
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField txtSearch;
+    private javax.swing.JTextField txtUnitId;
+    private javax.swing.JTextField txtUnitName;
     // End of variables declaration//GEN-END:variables
 }
